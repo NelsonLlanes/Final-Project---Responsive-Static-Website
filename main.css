@@ -1,0 +1,3794 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --p: 15px;
+    --h2: 1.7333rem;
+    --h3: 1.5384rem;
+
+}
+
+html {
+    font-family: 'Segoe UI', segoe ui, helvetica;
+    font-size: var(--p)
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+/* ---header--- */
+
+.desktop {
+    display: none;
+}
+
+.desktop-header {
+    display: none;
+}
+
+.mobile-header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    width: 320px;
+}
+
+.mobile-header .top {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.mobile-header .top div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.xbox-logo {
+    display: inline-block;
+    flex-direction: row;
+    gap: 1rem;
+    margin: .5rem 1rem;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+}
+
+.carousel>input {
+    display: none;
+}
+
+.viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.track {
+    display: flex;
+    width: 100%;
+    transition: transform .45s ease;
+}
+
+.slide {
+    flex: 0 0 100%;
+    position: relative;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* --- Navegacion (dots) --- */
+.dots {
+    position: absolute;
+    width: fit-content;
+    padding: .3rem;
+    left: 38%;
+    bottom: 3rem;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.dots label {
+    min-width: 1rem;
+    height: 1rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    cursor: pointer;
+    user-select: none;
+    background: transparent;
+    font-weight: 700;
+    border: 1px solid white;
+}
+
+/* --- Estados activos (mueve el carrusel) --- */
+#c1:checked~.viewport .track {
+    transform: translateX(0%);
+}
+
+#c2:checked~.viewport .track {
+    transform: translateX(-100%);
+}
+
+#c3:checked~.viewport .track {
+    transform: translateX(-200%);
+}
+
+#c4:checked~.viewport .track {
+    transform: translateX(-300%);
+}
+
+/* dot active */
+#c1:checked~.dots label[for="c1"],
+#c2:checked~.dots label[for="c2"],
+#c3:checked~.dots label[for="c3"],
+#c4:checked~.dots label[for="c4"] {
+    background-color: white;
+}
+
+/* Opcional: sangrar a ancho completo del viewport */
+.carousel.full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+/* -----------------------------------------------------CARRUSEL mobile-- */
+
+.desktop {
+    display: none;
+}
+
+/* ----------------------------------fifa */
+.fifa {
+    position: relative;
+}
+
+.fifa img {
+    width: 100%;
+    height: auto;
+}
+
+.fifa .text {
+    position: absolute;
+    bottom: 21%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem 0 2rem;
+    text-align: center;
+    gap: 1rem;
+}
+
+.fifa .text p span {
+    background-color: #ffd800;
+    line-height: normal;
+    letter-spacing: 0.075rem;
+    font-weight: 700;
+    text-align: center;
+    font-size: .8rem;
+    padding: .1rem .3rem;
+}
+
+.fifa .text h2 {
+    font-size: var(--h2);
+}
+
+.fifa .text h2 span {
+    font-size: var(--p);
+    vertical-align: super;
+    font-weight: 700;
+}
+
+.fifa .text .button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background-color: #9bf00b;
+    width: 13.5rem;
+    padding: .5rem;
+    font-weight: 800;
+    color: #054b16;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.fifa .text .button a:hover {
+    background-color: #8bd80a;
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* ---------------------------------------------rog-ally */
+
+.rog-ally {
+    position: relative;
+}
+
+.rog-ally img {
+    width: 100%;
+    height: auto;
+}
+
+
+.rog-ally .text p span {
+    background-color: #ffd800;
+    line-height: normal;
+    letter-spacing: 0.075rem;
+    font-weight: 700;
+    text-align: center;
+    font-size: .8rem;
+    padding: .1rem .3rem;
+    color: black;
+}
+
+.rog-ally .text {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem 0 2rem;
+    text-align: center;
+    gap: 1rem;
+    color: white;
+}
+
+.rog-ally .text h2 {
+    font-size: var(--h2);
+}
+
+.rog-ally .text h2 span {
+    font-size: var(--p);
+    vertical-align: super;
+    font-weight: 700;
+}
+
+.rog-ally .text .button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background-color: #9bf00b;
+    width: 15.5rem;
+    padding: .5rem;
+    font-weight: 800;
+    color: #054b16;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.rog-ally .text .button a:hover {
+    background-color: #8bd80a;
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* --------------------------------------borderlands */
+.bonderlands {
+    position: relative;
+}
+
+.bonderlands img {
+    width: 100%;
+    height: auto;
+}
+
+
+.bonderlands .text p span {
+    background-color: #ffd800;
+    line-height: normal;
+    letter-spacing: 0.075rem;
+    font-weight: 700;
+    text-align: center;
+    font-size: .8rem;
+    padding: .1rem .3rem;
+    color: black;
+}
+
+.bonderlands .text {
+    position: absolute;
+    bottom: 21%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem 0 2rem;
+    text-align: center;
+    gap: 1rem;
+    color: white;
+}
+
+.bonderlands .text h2 {
+    font-size: var(--h2);
+}
+
+.bonderlands .text h2 span {
+    font-size: var(--p);
+    vertical-align: super;
+    font-weight: 700;
+}
+
+.bonderlands .text .button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background-color: #9bf00b;
+    width: 15.5rem;
+    padding: .5rem;
+    font-weight: 800;
+    color: #054b16;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.bonderlands .text .button a:hover {
+    background-color: #8bd80a;
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* ---------------------------------------cod6 */
+.black-ops {
+    position: relative;
+}
+
+.black-ops img {
+    width: 100%;
+    height: auto;
+}
+
+
+.black-ops .text p span {
+    background-color: #ffd800;
+    line-height: normal;
+    letter-spacing: 0.075rem;
+    font-weight: 700;
+    text-align: center;
+    font-size: .8rem;
+    padding: .1rem .3rem;
+    color: black;
+}
+
+.black-ops .text {
+    position: absolute;
+    bottom: 19%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem 0 2rem;
+    text-align: center;
+    gap: 1rem;
+    color: white;
+}
+
+.black-ops .text h2 {
+    font-size: var(--h2);
+}
+
+.black-ops .text h2 span {
+    font-size: var(--p);
+    vertical-align: super;
+    font-weight: 700;
+}
+
+.black-ops-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.black-ops .text .button2 {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.black-ops .text .button2 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.black-ops .text .button2 a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+.black-ops .text .button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background-color: #9bf00b;
+    width: 15.5rem;
+    padding: .5rem;
+    font-weight: 800;
+    color: #054b16;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.black-ops .text .button a:hover {
+    background-color: #8bd80a;
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/*---------------------------------- content mobile */
+/* icons */
+.gamepass-icoon {
+    width: 42px;
+}
+
+.control-icoon {
+    width: 42px;
+}
+
+.xbox-icoon {
+    width: 30px;
+}
+
+.headset-icoon {
+    width: 42px;
+}
+
+.play-icoon {
+    width: 42px;
+}
+
+.profile-icoon {
+    width: 42px;
+}
+
+.icons {
+    display: grid;
+    justify-content: space-around;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 800;
+    color: #107c10;
+    gap: 2rem;
+}
+
+.gamepass-ico {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.control-icon {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.consoles-icon {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.accessories {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.play-icon {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.sing-in {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+/* ---------------------content */
+.post {
+    display: grid;
+    gap: 6.5rem;
+
+}
+
+.minecraft-live {
+    width: 100%;
+    position: relative
+}
+
+.minecraft-live .text {
+    position: absolute;
+    width: 100%;
+    top: 60%;
+    background-color: #333333;
+    color: white;
+    height: 65%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.minecraft-live .text h3 {
+    font-size: var(--h2);
+}
+
+.minecraft-live .text p {
+    font-size: var(--p);
+}
+
+
+
+.minecraft-live .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 30rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.minecraft-live .text .button a:hover {
+    gap: 1rem;
+    color: #8bd80a;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* -------------------------------------gamepass */
+.gamepass-post {
+    width: 100%;
+    position: relative
+}
+
+.gamepass-post .text {
+    position: absolute;
+    width: 100%;
+    top: 60%;
+    background-color: #107c10;
+    color: white;
+    height: 65%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.gamepass-post .text h3 {
+    font-size: var(--h2);
+}
+
+.gamepass-post .text p {
+    font-size: var(--p);
+}
+
+
+
+.gamepass-post .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 30rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.gamepass-post .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/*--------------------------------- silkson */
+.silkson {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1.1rem;
+}
+
+.silkson .text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    background-color: #333333;
+    color: white;
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.silkson .text h3 {
+    font-size: var(--h2);
+}
+
+.silkson .text p {
+    font-size: var(--p);
+}
+
+.silkson .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.silkson .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 30rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.silkson .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* assasins-creed */
+.assasins-creed {
+    width: 100%;
+    position: relative;
+    margin-bottom: 8.5rem;
+}
+
+.assasins-creed .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: #107c10;
+    color: white;
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.assasins-creed .text h3 {
+    font-size: var(--h2);
+}
+
+.assasins-creed .text p {
+    font-size: var(--p);
+}
+
+.assasins-creed .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.assasins-creed .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 30rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.assasins-creed .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+
+/* ---------------------------------------deep-rock */
+
+.deep-rock {
+    width: 100%;
+    position: relative;
+    margin-bottom: 8.5rem;
+}
+
+.deep-rock .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: #107c10;
+    color: white;
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.deep-rock .text h3 {
+    font-size: var(--h2);
+}
+
+.assasins-creed .text p {
+    font-size: var(--p);
+}
+
+.deep-rock .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.deep-rock .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 30rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.deep-rock .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/*------------------------------------------- gameshow */
+
+.tokyo {
+    width: 100%;
+    position: relative;
+    margin-bottom: 8.5rem;
+}
+
+.tokyo .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: #107c10;
+    color: white;
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tokyo .text h3 {
+    font-size: var(--h2);
+}
+
+.tokyo .text p {
+    font-size: var(--p);
+}
+
+.tokyo .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.tokyo .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 30rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.tokyo .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+
+/* ---------------------------------------play-anywhere */
+
+
+.play-anywhere {
+    width: 100%;
+    position: relative;
+    margin-bottom: 14.5rem;
+}
+
+.play-anywhere .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: #333333;
+    color: white;
+    height: 240%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.play-anywhere .text h3 {
+    font-size: var(--h2);
+}
+
+.play-anywhere .text p {
+    font-size: var(--p);
+}
+
+.play-anywhere .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.play-anywhere .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 16rem;
+    background-color: #9bf00b;
+    color: #333333;
+    padding: .5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.play-anywhere .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* -----------------------------------------diablo4 */
+.diablo4 {
+    width: 100%;
+    position: relative;
+    margin-bottom: 8.5rem;
+}
+
+.diablo4 .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: #107c10;
+    color: white;
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.diablo4 .text h3 {
+    font-size: var(--h2);
+}
+
+.diablo4 .text p {
+    font-size: var(--p);
+}
+
+.diablo4 .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.diablo4 .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 16rem;
+    background-color: transparent;
+    color: white;
+    padding: .5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.diablo4 .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* ---------------------------------------indiana-jhons */
+
+.indiana-jhons {
+    width: 100%;
+    position: relative;
+    margin-bottom: 11rem;
+}
+
+.indiana-jhons .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: #107c10;
+    color: white;
+    height: 90%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.indiana-jhons .text h3 {
+    font-size: var(--h2);
+}
+
+.indiana-jhons .text p {
+    font-size: var(--p);
+}
+
+.indiana-jhons .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.indiana-jhons .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 16rem;
+    background-color: transparent;
+    color: white;
+    padding: .5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.indiana-jhons .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* ----------------------------------------nhl */
+.nhl {
+    width: 100%;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.nhl .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: white;
+    color: black;
+    height: 20%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nhl .text h3 {
+    font-size: var(--h2);
+}
+
+.nhl .text p {
+    font-size: var(--p);
+}
+
+.nhl .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.nhl .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 16rem;
+    background-color: transparent;
+    color: black;
+    padding: .5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.nhl .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* -----------------------------------------jump-space */
+.jump-space {
+    width: 100%;
+    position: relative;
+    margin-bottom: 9rem;
+}
+
+.jump-space .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: #333333;
+    color: white;
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.jump-space .text h3 {
+    font-size: var(--h2);
+}
+
+.jump-space .text p {
+    font-size: var(--p);
+}
+
+.jump-space .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.jump-space .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 16rem;
+    background-color: transparent;
+    color: white;
+    padding: .5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.jump-space .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* dying-light */
+.dying-light {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.dying-light .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: #333333;
+    color: white;
+    height: 50%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.dying-light .text h3 {
+    font-size: var(--h2);
+}
+
+.dying-light .text p {
+    font-size: var(--p);
+}
+
+.dying-light .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.dying-light .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 16rem;
+    background-color: transparent;
+    color: white;
+    padding: .5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.dying-light .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/* -------------------------------------black-ops6 */
+.black-ops6 {
+    width: 100%;
+    position: relative;
+    margin-bottom: 11rem;
+}
+
+.black-ops6 .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: #333333;
+    color: white;
+    height: 90%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.black-ops6 .text h3 {
+    font-size: var(--h2);
+}
+
+.black-ops6 .text p {
+    font-size: var(--p);
+}
+
+.black-ops6 .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.black-ops6 .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 16rem;
+    background-color: transparent;
+    color: white;
+    padding: .5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.black-ops6 .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+/*---- -------------------------------------merch */
+.merch {
+    width: 100%;
+    position: relative;
+    margin-bottom: 11rem;
+}
+
+.merch .text {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    background-color: white;
+    color: #333333;
+    height: 90%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.merch .text h3 {
+    font-size: var(--h2);
+}
+
+.merch .text p {
+    font-size: var(--p);
+}
+
+.merch .text p span {
+    background-color: #ffd800;
+    color: black;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+
+
+.merch .text .button a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 16rem;
+    background-color: #9bf00b;
+    color: #107c10;
+    padding: .5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+}
+
+.merch .text .button a:hover {
+    gap: 1rem;
+    text-decoration-color: currentColor;
+    text-underline-offset: .35em;
+}
+
+
+footer {
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 1rem;
+
+}
+
+footer h4 {
+    color: #616161;
+}
+
+footer nav ul li a {
+    color: #89a0a0;
+}
+
+
+@media(min-width:321px) {
+
+    .mobile-header {
+        position: inherit;
+        width: 100%;
+    }
+
+    .icons {
+        display: grid;
+        justify-content: space-around;
+        text-align: center;
+        padding: 1rem;
+        font-weight: 800;
+        color: #107c10;
+        gap: 2rem;
+    }
+
+    .gamepass-ico {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .control-icon {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .consoles-icon {
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+
+    .accessories {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .play-icon {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .sing-in {
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+}
+
+@media(min-width:540px) {
+
+    .desktop {
+        display: none;
+    }
+
+
+    :root {
+        --p: 26px;
+        --h2: 1.7333rem;
+        --h3: 1.5384rem;
+        --span: 15px;
+    }
+
+    html {
+        font-size: var(--p);
+    }
+
+
+
+    .desktop {
+        display: none;
+    }
+
+
+    /* icons */
+    .icons {
+        font-size: .6rem;
+
+    }
+
+    .icons div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .gamepass-icoon {
+        width: 80px;
+    }
+
+    .control-icoon {
+        width: 75px;
+    }
+
+    .xbox-icoon {
+        width: 40px;
+    }
+
+    .headset-icoon {
+        width: 60px;
+    }
+
+    .play-icoon {
+        width: 55px;
+    }
+
+    .profile-icoon {
+        width: 50px;
+    }
+
+
+    /* ----------------------------------fifa */
+    .fifa {
+        position: relative;
+    }
+
+    .fifa img {
+        width: 100%;
+        height: auto;
+    }
+
+    .fifa .text {
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 2rem 0 2rem;
+        text-align: center;
+        gap: 1rem;
+        line-height: 32px;
+    }
+
+    .fifa .text p span {
+        background-color: #ffd800;
+        line-height: normal;
+        letter-spacing: 0.075rem;
+        font-weight: 700;
+        text-align: center;
+        font-size: .5rem;
+        padding: .1rem .3rem;
+    }
+
+    .fifa .text h2 {
+        font-size: var(--h2);
+    }
+
+    .fifa .text h2 span {
+        font-size: .7rem;
+        vertical-align: super;
+        font-weight: 700;
+    }
+
+    .fifa .text .button a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        background-color: #9bf00b;
+        width: 8rem;
+        padding: .04rem;
+        font-size: .55rem;
+        font-weight: 800;
+        color: #054b16;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .fifa .text .button a:hover {
+        background-color: #8bd80a;
+        gap: 1rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /* ---------------------------------------------rog-ally */
+
+    .rog-ally {
+        position: relative;
+    }
+
+    .rog-ally img {
+        width: 100%;
+        height: auto;
+    }
+
+    .rog-ally .text {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 2rem 0 2rem;
+        text-align: center;
+        gap: 1rem;
+        line-height: 32px;
+    }
+
+    .rog-ally .text p span {
+        background-color: #ffd800;
+        line-height: normal;
+        letter-spacing: 0.075rem;
+        font-weight: 700;
+        text-align: center;
+        font-size: .5rem;
+        padding: .1rem .3rem;
+    }
+
+    .rog-ally .text h2 {
+        font-size: var(--h2);
+    }
+
+    .rog-ally .text h2 span {
+        font-size: .7rem;
+        vertical-align: super;
+        font-weight: 700;
+    }
+
+    .rog-ally .text .button a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        background-color: #9bf00b;
+        width: 8rem;
+        padding: .04rem;
+        font-size: .55rem;
+        font-weight: 800;
+        color: #054b16;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .rog-ally .text .button a:hover {
+        background-color: #8bd80a;
+        gap: 1rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /* --------------------------------------borderlands */
+    .bonderlands {
+        position: relative;
+    }
+
+    .bonderlands img {
+        width: 100%;
+        height: auto;
+    }
+
+    .bonderlands .text {
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 2rem 0 2rem;
+        text-align: center;
+        gap: 1rem;
+        line-height: 32px;
+    }
+
+    .bonderlands .text p span {
+        background-color: #ffd800;
+        line-height: normal;
+        letter-spacing: 0.075rem;
+        font-weight: 700;
+        text-align: center;
+        font-size: .5rem;
+        padding: .1rem .3rem;
+    }
+
+    .bonderlands .text h2 {
+        font-size: var(--h2);
+    }
+
+    .bonderlands .text h2 span {
+        font-size: .7rem;
+        vertical-align: super;
+        font-weight: 700;
+    }
+
+    .bonderlands .text .button a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        background-color: #9bf00b;
+        width: 8rem;
+        padding: .04rem;
+        font-size: .55rem;
+        font-weight: 800;
+        color: #054b16;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .bonderlands .text .button a:hover {
+        background-color: #8bd80a;
+        gap: 1rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /* ---------------------------------------cod6 */
+    .black-ops {
+        position: relative;
+    }
+
+    .black-ops img {
+        width: 100%;
+        height: auto;
+    }
+
+    .black-ops .text {
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 2rem 0 2rem;
+        text-align: center;
+        gap: 1rem;
+        line-height: 32px;
+    }
+
+    .black-ops .text p span {
+        background-color: #ffd800;
+        line-height: normal;
+        letter-spacing: 0.075rem;
+        font-weight: 700;
+        text-align: center;
+        font-size: .5rem;
+        padding: .1rem .3rem;
+    }
+
+    .black-ops .text h2 {
+        font-size: var(--h2);
+    }
+
+    .black-ops .text h2 span {
+        font-size: .7rem;
+        vertical-align: super;
+        font-weight: 700;
+    }
+
+    .black-ops-buttons {
+        display: flex;
+    }
+
+    .black-ops .text .button2 {
+        margin-top: 1rem;
+    }
+
+    .black-ops .text .button2 a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        font-weight: 800;
+        font-size: .55rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .black-ops .text .button2 a:hover {
+        gap: 1rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    .black-ops .text .button a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        background-color: #9bf00b;
+        width: 8rem;
+        padding: .04rem;
+        font-size: .55rem;
+        font-weight: 800;
+        color: #054b16;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .black-ops .text .button a:hover {
+        background-color: #8bd80a;
+        gap: 1rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+}
+
+@media(min-width:768px) {
+
+
+
+    .icons {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        font-weight: 800;
+        color: #107c10;
+        gap: 1rem;
+        font-size: .7rem;
+    }
+
+    .gamepass-ico {
+        grid-column: 1/2;
+        grid-row: 1/2;
+
+    }
+
+    .gamepass-ico .gamepass-icoon {
+        width: 70px;
+    }
+
+    .control-icon .control-icoon {
+        width: 70px;
+    }
+
+    .consoles-icon .consoles-icoon {
+        width: 42px;
+    }
+
+    .accesories .headset-icoon {
+        width: 60px;
+    }
+
+    .play-icon .play-icoon {
+        width: 50px;
+    }
+
+    .sign-in .profile-icoon {
+        width: 55px;
+    }
+
+    .control-icon {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .control-icon a img {
+        width: 800px;
+    }
+
+    .consoles-icon {
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+
+    .accessories {
+        grid-column: 4/5;
+        grid-row: 1/2;
+    }
+
+    .play-icon {
+        grid-column: 5/6;
+        grid-row: 1/2;
+    }
+
+    .sing-in {
+        grid-column: 6/7;
+        grid-row: 1/2;
+    }
+
+    .icons div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+
+@media(min-width:860px) {
+    :root {
+        --p: 15px;
+        --h2: 1.7333rem;
+        --h3: 1.5384rem;
+
+    }
+
+    html {
+        font-family: 'Segoe UI', segoe ui, helvetica;
+        font-size: var(--p)
+    }
+
+    .mobile-header {
+        display: none;
+    }
+
+    .menu {
+        align-items: center;
+    }
+
+    .desktop-header {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .dispositivos {
+        display: none;
+    }
+
+    .juega {
+        display: none;
+    }
+
+    .tienda {
+        display: none;
+    }
+
+    .comunidad {
+        display: none;
+    }
+
+    .cart {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .sign-in {
+        display: none;
+    }
+
+    .desktop-header {
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        height: 54px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .lefnav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header-nav-1 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .microsoft-img {
+        height: 23px;
+        width: auto;
+        padding: 0 20px;
+        border-right: 2px solid black;
+    }
+
+    .xbox-logo {
+        height: 23px;
+        width: auto;
+        padding: 0;
+    }
+
+    header div {
+        display: flex;
+        align-items: center;
+    }
+
+    /* --first nav-- */
+    .menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu-item {
+        min-width: fit-content;
+    }
+
+    .menu-item a span {
+        vertical-align: bottom;
+    }
+
+    /* --second nav-- */
+    .account-menu {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+
+    .account-menu li,
+    .menu li {
+        padding: 16px 10px 16px 10px;
+        min-width: fit-content;
+        align-content: center;
+    }
+
+    .menu>.menu-item,
+    .account-menu>.menu-item {
+        position: relative;
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        margin-top: 8px;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+        border-radius: 4px;
+        padding: 8px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(6px);
+        transition: opacity .18s ease, transform .18s ease, visibility 0s .18s;
+        z-index: 1000;
+    }
+
+    .dropdown li a:hover,
+    .dropdown li a:focus {
+        background: #f3f4f6;
+    }
+
+    .menu-item:active,
+    .menu-item:focus-within {
+        background-color: #f2f2f2;
+    }
+
+    .has-dropdown:focus-within>.dropdown,
+    .has-dropdown:active>.dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: opacity .18s ease, transform .18s ease, visibility 0s;
+        background-color: #f2f2f2;
+    }
+
+    .dropdown li:hover,
+    .dropdown li a:hover {
+        background-color: #e6e6e6;
+    }
+
+
+}
+
+@media(min-width:945px) {
+    .dispositivos {
+        display: flex;
+    }
+}
+
+@media (min-width:997px) {
+    .juega {
+        display: flex;
+    }
+}
+
+@media (min-width:1070px) {
+    .tienda {
+        display: flex;
+    }
+}
+
+@media(min-width:1245px) {
+    .comunidad {
+        display: flex;
+    }
+}
+
+@media(min-width:1400px) {
+
+    .search,
+    .cart {
+        display: inline-block;
+    }
+}
+
+
+/* --CARRUSEL desktop-- */
+@media (min-width: 1080px) {
+
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: flex;
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+    }
+
+    .carousel>input {
+        display: none;
+    }
+
+    .viewport {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .track {
+        display: flex;
+        width: 100%;
+        transition: transform .45s ease;
+    }
+
+    .slide {
+        flex: 0 0 100%;
+        position: relative;
+    }
+
+    .slide img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* --- Navegacion (dots) --- */
+    .dots {
+        position: absolute;
+        width: fit-content;
+        padding: .3rem;
+        left: 47%;
+        bottom: 3rem;
+        display: flex;
+        gap: .5rem;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, .2);
+    }
+
+    .dots label {
+        min-width: 1rem;
+        height: 1rem;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        cursor: pointer;
+        user-select: none;
+        background: transparent;
+        font-weight: 700;
+        border: 1px solid white;
+    }
+
+
+    .carousel.desktop #cd1:checked~.viewport .track {
+        transform: translateX(0%);
+    }
+
+    .carousel.desktop #cd2:checked~.viewport .track {
+        transform: translateX(-100%);
+    }
+
+    .carousel.desktop #cd3:checked~.viewport .track {
+        transform: translateX(-200%);
+    }
+
+    .carousel.desktop #cd4:checked~.viewport .track {
+        transform: translateX(-300%);
+    }
+
+    .carousel.desktop #cd1:checked~.dots label[for="cd1"],
+    .carousel.desktop #cd2:checked~.dots label[for="cd2"],
+    .carousel.desktop #cd3:checked~.dots label[for="cd3"],
+    .carousel.desktop #cd4:checked~.dots label[for="cd4"] {
+        background-color: white;
+    }
+
+
+    .carousel.full-bleed {
+        width: 100vw;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    :root {
+        --p: 15px;
+        --h2: 1.7333rem;
+        --h3: 1.5384rem;
+        --span: 15px;
+    }
+
+    html {
+        font-size: var(--p);
+    }
+
+    .mobile {
+        display: none;
+    }
+
+
+    .juega>a::after {
+        content: " ▼";
+        /* agrega una flechita sin necesidad de HTML */
+        font-size: 0.8rem;
+        color: #666;
+    }
+
+    /*----------------------------------- fifa */
+    .fifa {
+        position: relative;
+        width: 100%;
+    }
+
+    .fifa-text {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        padding: 2rem 1rem 4rem 4rem;
+        font-size: 1.5rem;
+        line-height: 34px;
+    }
+
+    .fifa-text h2 {
+        position: relative;
+        letter-spacing: -.01rem;
+        font-size: 2rem;
+        line-height: 72px;
+        padding-bottom: 1rem;
+
+    }
+
+    .fifa-text h2 span {
+        font-size: .8rem;
+        vertical-align: super;
+
+    }
+
+    .fifa-text p span {
+        background-color: #ffd800;
+        font-weight: 700;
+        font-size: .8rem;
+        letter-spacing: .075rem;
+        padding: .06rem .5rem;
+    }
+
+    .fifa-text .button {
+        display: inline-flex;
+        align-items: center;
+        gap: .75rem;
+        background-color: #9bf00b;
+        max-width: fit-content;
+        height: fit-content;
+    }
+
+    .fifa .button p {
+        margin: 0;
+    }
+
+    .cta-arrow {
+        width: 16px;
+        stroke: currentColor;
+        stroke-width: var(--arrow-weight, 2.6);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    .fifa-text .button {
+        margin-top: 2rem;
+    }
+
+    .fifa-text .button a {
+        display: flex;
+        flex-direction: row;
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 900;
+        height: fit-content;
+        width: 17rem;
+        line-height: 18.5px;
+        color: #054b16;
+        padding: .5rem 1.25rem;
+        justify-content: center;
+        gap: 1rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .fifa-text .button a:hover {
+        background-color: #8bd80a;
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+
+    /* ---------------------------------------------ROG Ally */
+    .rog-ally {
+        position: relative;
+        width: 100%;
+    }
+
+    .rog-ally .text {
+        text-align: start;
+        align-items: start;
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        padding: 2rem 1rem 4rem 4rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .rog-ally .text h2 {
+        position: relative;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+
+    }
+
+    .rog-ally .text h2 span {
+        font-size: .8rem;
+        vertical-align: super;
+
+    }
+
+    .rog-ally .text p span {
+        background-color: #ffd800;
+        font-weight: 700;
+        font-size: .7rem;
+        letter-spacing: .075rem;
+        padding: .06rem .5rem;
+    }
+
+    .rog-ally .text .button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #9bf00b;
+        max-width: fit-content;
+        height: fit-content;
+        margin-top: 2rem;
+    }
+
+    .rog-ally .button p {
+        margin: 0;
+    }
+
+    .cta-arrow {
+        width: 16px;
+        stroke: currentColor;
+        stroke-width: var(--arrow-weight, 2.6);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    .rog-ally .text .button a {
+        display: flex;
+        flex-direction: row;
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 900;
+        height: fit-content;
+        width: 17rem;
+        line-height: 18.5px;
+        color: #054b16;
+        padding: .5rem 1.25rem;
+        justify-content: center;
+        gap: 1rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .rog-ally .text .button a:hover {
+        background-color: #8bd80a;
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /* ---------------------------------------------Borderlands */
+    .bonderlands {
+        position: relative;
+        width: 100%;
+    }
+
+    .bonderlands .text {
+        text-align: start;
+        align-items: start;
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        padding: 2rem 1rem 4rem 4rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .bonderlands .text h2 {
+        position: relative;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+
+    }
+
+    .bonderlands .text h2 span {
+        font-size: .8rem;
+        vertical-align: super;
+
+    }
+
+    .bonderlands .text p span {
+        background-color: #ffd800;
+        font-weight: 700;
+        font-size: .7rem;
+        letter-spacing: .075rem;
+        padding: .06rem .5rem;
+    }
+
+    .bonderlands .text .button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #9bf00b;
+        max-width: fit-content;
+        height: fit-content;
+        margin-top: 2rem;
+    }
+
+    .bonderlands .button p {
+        margin: 0;
+    }
+
+    .cta-arrow {
+        width: 16px;
+        stroke: currentColor;
+        stroke-width: var(--arrow-weight, 2.6);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    .bonderlands .text .button a {
+        display: flex;
+        flex-direction: row;
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 900;
+        height: fit-content;
+        width: 17rem;
+        line-height: 18.5px;
+        color: #054b16;
+        padding: .5rem 1.25rem;
+        justify-content: center;
+        gap: 1rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .bonderlands .text .button a:hover {
+        background-color: #8bd80a;
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /* ---------------------------------------------bLACK OPS */
+
+    .bonblack-opserlands {
+        position: relative;
+        width: 100%;
+    }
+
+    .black-ops .text {
+        text-align: start;
+        align-items: start;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        padding: 2rem 1rem 4rem 4rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .black-ops .text h2 {
+        position: relative;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+
+    }
+
+    .black-ops .text h2 span {
+        font-size: .8rem;
+        vertical-align: super;
+
+    }
+
+    .black-ops .text p span {
+        background-color: #ffd800;
+        font-weight: 700;
+        font-size: .7rem;
+        letter-spacing: .075rem;
+        padding: .06rem .5rem;
+    }
+
+    .black-ops-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .black-ops .text .button2 {
+        display: flex;
+        flex-direction: column;
+        display: inline-flex;
+        align-items: center;
+        max-width: fit-content;
+        height: fit-content;
+        margin-top: 2rem;
+
+    }
+
+    .black-ops .text .button2 a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        gap: .5rem;
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .black-ops .text .button2 a:hover {
+        gap: 1rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    .black-ops .text .button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #9bf00b;
+        max-width: fit-content;
+        height: fit-content;
+        margin-top: 2rem;
+    }
+
+    .black-ops .button p {
+        margin: 0;
+    }
+
+    .cta-arrow {
+        width: 16px;
+        stroke: currentColor;
+        stroke-width: var(--arrow-weight, 2.6);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    .black-ops .text .button a {
+        display: flex;
+        flex-direction: row;
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 900;
+        height: fit-content;
+        width: 17rem;
+        line-height: 18.5px;
+        color: #054b16;
+        padding: .5rem 1.25rem;
+        justify-content: center;
+        gap: 1rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .black-ops .text .button a:hover {
+        background-color: #8bd80a;
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /* --CARRUSEL-- */
+    .icons {
+        padding: 2.5rem 18%;
+        display: flex;
+        color: #107c10;
+        justify-content: space-evenly;
+        font-family: "Segoe UI", "Arial Black", Impact, sans-serif;
+        font-weight: 900;
+        font-size: 1.1rem;
+    }
+
+    .icons div {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    /* content */
+    .post {
+        display: grid;
+        padding: .5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(4, 31.9%) 45% repeat(4, 31.9%) 45%;
+        grid-auto-rows: 31.9%;
+        aspect-ratio: 8/7;
+        gap: .5rem;
+    }
+
+
+
+    /*--------------------------------- .minecraft */
+    .minecraft-live {
+        position: relative;
+        width: 100%;
+        color: white;
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+
+    .minecraft-live .text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        top: 52%;
+        padding: 3rem 1rem 3rem 3rem;
+        background-color: transparent;
+    }
+
+    .minecraft-live-text h3 {
+        font-size: 46px;
+    }
+
+    .minecraft-live-text p {
+        font-size: 20px;
+    }
+
+    .minecraft-live-text .button p {
+        font-size: 1.2rem;
+    }
+
+    .minecraft-live-text .button a {
+        display: flex;
+        flex-direction: row;
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-weight: 900;
+        height: fit-content;
+        width: fit-content;
+        line-height: 18.5px;
+        color: white;
+        padding: .5rem 1.25rem;
+        justify-content: center;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .minecraft-live-text .button a:hover {
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /*--------------------------------- .Gamepass */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .gamepass-post> :first-child {
+        animation: fadeIn 4s ease-out forwards;
+    }
+
+
+
+
+    .gamepass-post {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 100%;
+        background-color: green;
+        position: relative;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        z-index: 100;
+        height: 100%
+    }
+
+    .gamepass-post .imagen {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .gamepass-post .imagen img {
+        transition: transform .6s cubic-bezier(.2, .65, .3, 1);
+        transform-origin: 50% 50%;
+    }
+
+    .gamepass-post .imagen:hover img {
+        transform: scale(1.06);
+    }
+
+    .gamepass-post> :first-child {
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        color: white;
+        z-index: 100;
+        background-color: transparent;
+        top: 0;
+    }
+
+    .gamepass-text h3 {
+        font-size: 24px;
+    }
+
+    .gamepass-text p {
+        font-size: 20px;
+    }
+
+    .gamepass-text .button p {
+        font-weight: 900;
+        font-size: 1.125rem;
+    }
+
+    /* ----------------------------SILKSON */
+    .silkson {
+        position: relative;
+        width: 100%;
+        grid-column: 2/3;
+        grid-row: 2/4;
+    }
+
+    .silkson img {
+        width: 100%;
+    }
+
+    .silkson .text {
+        position: absolute;
+        top: 0;
+        padding: 50% .75rem 1rem 3rem;
+        color: white;
+        font-size: 20px;
+        background-color: transparent;
+        gap: 0;
+    }
+
+    .silkson .text h2 {
+        position: relative;
+        color: white;
+    }
+
+
+
+    .silkson .text p span {
+        background-color: #ffd800;
+        color: black;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: .075rem;
+        padding: .06rem .5rem;
+    }
+
+    .silkson .text h3 {
+        letter-spacing: -.01rem;
+        font-size: 46px;
+        line-height: 72px;
+        color: white;
+    }
+
+    .silkson .text h3 span {
+        font-size: 2rem;
+        vertical-align: super;
+    }
+
+
+    .silkson .text .button {
+        display: inline-flex;
+        align-items: center;
+        gap: .75rem;
+        background-color: transparent;
+        max-width: fit-content;
+        height: fit-content;
+    }
+
+
+
+    .cta-arrow {
+        width: 16px;
+        stroke: currentColor;
+        stroke-width: var(--arrow-weight, 2.6);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    .silkson .text .button {
+        margin-top: 3rem;
+    }
+
+    .silkson .text .button P {
+        color: white;
+    }
+
+    .silkson .text .button a {
+        display: flex;
+        flex-direction: row;
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 900;
+        height: fit-content;
+        width: 17rem;
+        line-height: 18.5px;
+        color: white;
+        gap: 1rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .silkson .text .button a:hover {
+        background-color: transparent;
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /*--------------------------------------- assasins-cree */
+    .assasins-creed {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 100%;
+        background-color: green;
+        position: relative;
+        grid-column: 1/2;
+        grid-row: 3/4;
+        z-index: 100;
+        height: 100%
+    }
+
+    .assasins-creed .imagen {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .assasins-creed .imagen img {
+        transition: transform .6s cubic-bezier(.2, .65, .3, 1);
+        transform-origin: 50% 50%;
+    }
+
+    .assasins-creed .imagen:hover img {
+        transform: scale(1.06);
+    }
+
+    .assasins-creed .text {
+        position: absolute;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        z-index: 100;
+        background-color: transparent;
+        top: 0;
+        font-size: .2rem;
+        gap: .5rem;
+    }
+
+    .assasins-creed .text .button p {
+        font-weight: 900;
+        font-size: 1.125rem;
+    }
+
+    /* ----------------------------------------deep-rock */
+
+    .deep-rock {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 100%;
+        background-color: green;
+        position: relative;
+        grid-column: 1/2;
+        grid-row: 4/5;
+        z-index: 100;
+        height: 100%
+    }
+
+    .deep-rock .imagen {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .deep-rock .imagen img {
+        transition: transform .6s cubic-bezier(.2, .65, .3, 1);
+        transform-origin: 50% 50%;
+    }
+
+    .deep-rock .imagen:hover img {
+        transform: scale(1.06);
+    }
+
+    .deep-rock .text {
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        color: white;
+        z-index: 100;
+        background-color: transparent;
+        top: 0;
+        gap: .5rem;
+    }
+
+
+
+    .deep-rock .text .button p {
+        font-weight: 900;
+        font-size: 1.125rem;
+    }
+
+
+    /*-------------------------------------- TOKYO-GAMESHOW */
+    .tokyo {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 100%;
+        background-color: green;
+        position: relative;
+        grid-column: 2/3;
+        grid-row: 4/5;
+        z-index: 100;
+        height: 100%
+    }
+
+    .tokyo .imagen {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .tokyo .imagen img {
+        transition: transform .6s cubic-bezier(.2, .65, .3, 1);
+        transform-origin: 50% 50%;
+    }
+
+    .tokyo .imagen:hover img {
+        transform: scale(1.06);
+    }
+
+    .tokyo .text {
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        z-index: 100;
+        background-color: transparent;
+        top: 0;
+        gap: 1.5rem;
+    }
+
+
+
+    .tokyo .text .button p {
+        font-weight: 900;
+        font-size: 1.125rem;
+    }
+
+    /* Xbox-playanywhere */
+    .play-anywhere {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        grid-column: 1/3;
+        grid-row: 5/6;
+        overflow: hidden;
+
+    }
+
+    .play-anywhere img {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .play-anywhere .text {
+        position: absolute;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        z-index: 12;
+        color: white;
+        padding: 10% 4.5rem 1rem 4.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+        top: 0;
+        background-color: transparent;
+    }
+
+
+
+
+    .play-anywhere .text h3 {
+        font-size: var(--h2);
+    }
+
+    .play-anywhere .text p {
+        font-size: 20px;
+    }
+
+
+    .play-anywhere .text .button {
+        margin-top: 3rem;
+        background-color: #9bf00b;
+        width: fit-content;
+        padding: .1rem 0rem;
+    }
+
+    .play-anywhere .text .button P {
+        font-weight: 900;
+        font-size: 1rem;
+    }
+
+    .play-anywhere .text .button a {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 900;
+        height: fit-content;
+        width: 17rem;
+        line-height: 18.5px;
+        color: #054b16;
+        gap: 1rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .play-anywhere .text .button a:hover {
+        background-color: transparent;
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /*------------------------------------------- DIABLO4 */
+    .diablo4 {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 100%;
+        background-color: green;
+        position: relative;
+        grid-column: 1/2;
+        grid-row: 7/6;
+        z-index: 100;
+        height: 100%
+    }
+
+    .diablo4 .imagen {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .diablo4 .imagen img {
+        transition: transform .6s cubic-bezier(.2, .65, .3, 1);
+        transform-origin: 50% 50%;
+    }
+
+    .diablo4 .imagen:hover img {
+        transform: scale(1.06);
+    }
+
+    .diablo4 .text {
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        color: white;
+        z-index: 100;
+        background-color: transparent;
+        top: 0;
+        gap: .5rem;
+        font-size: 1rem;
+    }
+
+
+
+    .diablo4 .text .button p {
+        font-weight: 900;
+        font-size: 1.125rem;
+    }
+
+    /* -----------------------------------indiana-jhons */
+
+    .indiana-jhons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 100%;
+        background-color: green;
+        position: relative;
+        grid-column: 2/3;
+        grid-row: 6/7;
+        z-index: 100;
+        height: 100%
+    }
+
+    .indiana-jhons .imagen {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .indiana-jhons .imagen img {
+        transition: transform .6s cubic-bezier(.2, .65, .3, 1);
+        transform-origin: 50% 50%;
+    }
+
+    .indiana-jhons .imagen:hover img {
+        transform: scale(1.06);
+    }
+
+    .indiana-jhons .text {
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        color: white;
+        z-index: 100;
+        background-color: transparent;
+        top: 0;
+        gap: .5rem;
+        font-size: 1rem;
+    }
+
+    .indiana-jhons .text h3 {
+        font-size: 1.5rem;
+    }
+
+
+
+    .indiana-jhons .text .button p {
+        font-weight: 900;
+        font-size: 1.125rem;
+    }
+
+    /* -----------------------------------------NHL */
+    .nhl {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 100%;
+        background-color: white;
+        position: relative;
+        grid-column: 1/2;
+        grid-row: 7/8;
+        z-index: 100;
+        height: 100%
+    }
+
+    .nhl .imagen {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .nhl .imagen img {
+        transition: transform .6s cubic-bezier(.2, .65, .3, 1);
+        transform-origin: 50% 50%;
+    }
+
+    .nhl .imagen:hover img {
+        transform: scale(1.06);
+    }
+
+    .nhl .text {
+        position: absolute;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        color: black;
+        z-index: 100;
+        background-color: transparent;
+        top: 0;
+        font-size: .2rem;
+        gap: 2rem;
+    }
+
+    .nhl .text .button a {
+        padding: 0;
+    }
+
+    .nhl .text .button p {
+        font-weight: 900;
+        font-size: 1.125rem;
+    }
+
+
+    /* -----------------------------------------jump-space */
+    .jump-space {
+        position: relative;
+        width: 100%;
+        grid-column: 2/3;
+        grid-row: 7/9;
+    }
+
+    .jump-space img {
+        width: 100%;
+    }
+
+    .jump-space .text {
+        position: absolute;
+        top: 0;
+        padding: 50% .75rem 1rem 3rem;
+        color: white;
+        font-size: 20px;
+        background-color: transparent;
+        gap: 0;
+    }
+
+    .jump-space .text h2 {
+        position: relative;
+        color: white;
+    }
+
+
+
+    .jump-space .text p span {
+        background-color: #ffd800;
+        color: black;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: .075rem;
+        padding: .06rem .5rem;
+    }
+
+    .jump-space .text h3 {
+        letter-spacing: -.01rem;
+        font-size: 46px;
+        line-height: 72px;
+        color: white;
+    }
+
+    .jump-space .text h3 span {
+        font-size: 2rem;
+        vertical-align: super;
+    }
+
+
+    .jump-space .text .button {
+        display: inline-flex;
+        align-items: center;
+        gap: .75rem;
+        background-color: transparent;
+        max-width: fit-content;
+        height: fit-content;
+    }
+
+
+
+    .cta-arrow {
+        width: 16px;
+        stroke: currentColor;
+        stroke-width: var(--arrow-weight, 2.6);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    .jump-space .text .button {
+        margin-top: 3rem;
+    }
+
+    .jump-space .text .button P {
+        color: white;
+    }
+
+    .jump-space .text .button a {
+        display: flex;
+        flex-direction: row;
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 900;
+        height: fit-content;
+        width: 17rem;
+        line-height: 18.5px;
+        color: white;
+        gap: 1rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .jump-space .text .button a:hover {
+        background-color: transparent;
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /* ----------------------------------------dying light */
+
+    .dying-light {
+        position: relative;
+        width: 100%;
+        grid-column: 1/2;
+        grid-row: 8/10;
+    }
+
+    .dying-light img {
+        width: 100%;
+    }
+
+    .dying-light .text {
+        position: absolute;
+        top: 0;
+        padding: 50% .75rem 1rem 3rem;
+        color: white;
+        font-size: 20px;
+        background-color: transparent;
+        gap: 0;
+    }
+
+    .dying-light .text h2 {
+        position: relative;
+        color: white;
+    }
+
+
+
+    .dying-light .text p span {
+        background-color: #ffd800;
+        color: black;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: .075rem;
+        padding: .06rem .5rem;
+    }
+
+    .dying-light .text h3 {
+        letter-spacing: -.01rem;
+        font-size: 46px;
+        line-height: 72px;
+        color: white;
+    }
+
+    .dying-light .text h3 span {
+        font-size: 2rem;
+        vertical-align: super;
+    }
+
+
+    .dying-light .text .button {
+        display: inline-flex;
+        align-items: center;
+        gap: .75rem;
+        background-color: transparent;
+        max-width: fit-content;
+        height: fit-content;
+    }
+
+
+
+    .cta-arrow {
+        width: 16px;
+        stroke: currentColor;
+        stroke-width: var(--arrow-weight, 2.6);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    .dying-light .text .button {
+        margin-top: 3rem;
+    }
+
+    .dying-light .text .button P {
+        color: white;
+    }
+
+    .dying-light .text .button a {
+        display: flex;
+        flex-direction: row;
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 900;
+        height: fit-content;
+        width: 17rem;
+        line-height: 18.5px;
+        color: white;
+        gap: 1rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .dying-light .text .button a:hover {
+        background-color: transparent;
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /* black-ops */
+    .black-ops6 {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 100%;
+        background-color: green;
+        position: relative;
+        grid-column: 2/3;
+        grid-row: 9/10;
+        z-index: 100;
+        height: 100%
+    }
+
+    .black-ops6 .imagen {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .black-ops6 .imagen img {
+        transition: transform .6s cubic-bezier(.2, .65, .3, 1);
+        transform-origin: 50% 50%;
+    }
+
+    .black-ops6 .imagen:hover img {
+        transform: scale(1.06);
+    }
+
+    .black-ops6 .text {
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        color: white;
+        z-index: 100;
+        background-color: transparent;
+        top: 0;
+        gap: .5rem;
+        font-size: 1rem;
+    }
+
+    .black-ops6 .text h3 {
+        font-size: 1.5rem;
+    }
+
+
+
+    .black-ops6 .text .button p {
+        font-weight: 900;
+        font-size: 1.125rem;
+    }
+
+    /*--------------------------------------- merchand */
+    .merch {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        grid-column: 1/3;
+        grid-row: 10/11;
+        overflow: hidden;
+
+    }
+
+    .merch img {
+        height: auto%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    .merch .imagen {
+        width: 60%;
+    }
+
+    .merch .text {
+        position: absolute;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        z-index: 12;
+        color: black;
+        padding: 10% 2rem 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        top: 0;
+        background-color: transparent;
+    }
+
+
+
+
+    .merch .text h3 {
+        font-size: 46px;
+    }
+
+    .merch .text p {
+        font-size: 20px;
+    }
+
+
+    .merch .text .button {
+        margin-top: 3rem;
+        background-color: #9bf00b;
+        width: fit-content;
+        padding: .1rem;
+    }
+
+    .merch .text .button P {
+        font-weight: 900;
+        font-size: 1.125rem;
+    }
+
+    .merch .text .button a {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        font-family: SegoeProBlack, Segoe UI, SegoeUI, Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 900;
+        height: fit-content;
+        width: 17rem;
+        line-height: 18.5px;
+        color: #054b16;
+        gap: 1rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.2em;
+        transition: background-color .35s ease, color .35s ease, gap .35s ease, text-decoration-color .25s ease, text-underline-offset .25s ease;
+    }
+
+    .merch .text .button a:hover {
+        background-color: transparent;
+        gap: 1.5rem;
+        text-decoration-color: currentColor;
+        text-underline-offset: .35em;
+    }
+
+    /* -----------------------------------------finish content */
+
+    .follow-xbox {
+        display: flex;
+        margin: 0 10rem;
+        gap: 1rem;
+        height: fit-content;
+    }
+
+    .follow-xbox p {
+        align-content: center;
+    }
+
+    .follow-xbox img {
+        height: 35px;
+    }
+
+    /* ---------------------------------------------------------------------------footer xbox */
+    .x-footer {
+        background: #f2f2f2;
+        color: #1a1a1a;
+        font-family: "Segoe UI", SegoeUI, -apple-system, system-ui, Roboto, Helvetica, Arial, sans-serif;
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .xft-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 32px 24px 20px;
+    }
+
+    /* columnas superiores */
+    .xft-cols {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(200px, 1fr));
+        gap: 32px;
+        border-bottom: 1px solid #d9d9d9;
+        padding-bottom: 24px;
+        margin-bottom: 16px;
+    }
+
+    .xft-col h4 {
+        margin: 0 0 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #323232;
+    }
+
+    .xft-col ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .xft-col li {
+        margin: 8px 0;
+    }
+
+    .xft-col a {
+        color: #262626;
+        text-decoration: none;
+    }
+
+    .xft-col a:hover {
+        text-decoration: underline;
+    }
+
+    /* franja inferior:*/
+    .xft-bottom {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        align-items: center;
+        column-gap: 16px;
+    }
+
+    /* izquierda */
+    .xft-locale {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #616161;
+        grid-row: 1/2;
+    }
+
+    .xft-globe {
+        color: #4a4a4a;
+    }
+
+    .xft-pill {
+        display: inline-grid;
+        grid-auto-flow: column;
+        gap: 4px;
+        border: 1px solid #d9d9d9;
+        border-radius: 999px;
+        background: #e9e9e9;
+        padding: 2px 6px;
+        line-height: 1;
+        font-size: 13px;
+        color: #1a1a1a;
+    }
+
+    .xft-pill-on,
+    .xft-pill-off {
+        width: 14px;
+        text-align: center;
+    }
+
+    .xft-privacy {
+        color: #262626;
+        text-decoration: none;
+        font-size: 12px;
+    }
+
+    .xft-privacy:hover {
+        text-decoration: underline;
+    }
+
+    /* centro */
+    /* --- FIX franja inferior del footer --- */
+    .xft-bottom {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: auto 1fr auto;
+        /* antes: 1fr auto auto */
+        align-items: center;
+        column-gap: 16px;
+    }
+
+    .xft-locale {
+        white-space: nowrap;
+        /* evita saltos: "Tus opciones..." no baja */
+        display: inline-flex;
+        align-items: center;
+        gap: 0px;
+    }
+
+    .xft-links {
+        grid-row: 2/3;
+        justify-self: start;
+        display: flex;
+        width: fit-content;
+        gap: 0 25px;
+        margin-left: 30%;
+    }
+
+    .xft-copy {
+        justify-self: end;
+        /* © a la derecha */
+    }
+
+    /* opcional: que la “píldora” sea azul como en la 2da captura */
+    .xft-pill {
+        background: #0a5fff;
+        border-color: #0a5fff;
+        color: #fff;
+    }
+}
